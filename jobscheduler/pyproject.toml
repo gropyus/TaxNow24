@@ -6,7 +6,7 @@ authors = ["TaxNow24 <engineering@taxnow24.io>"]
 
 [tool.poetry.dependencies]
 python = "~3.10"
-apache-airflow = "2.2.3"
+apache-airflow = "2.2.4"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.910"
