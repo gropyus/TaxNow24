@@ -1,2 +1,5 @@
 .idea
 .vscode
+
+venv
+.pytest_cache
