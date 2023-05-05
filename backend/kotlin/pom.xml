@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.6</version>
+		<version>3.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.taxnow24</groupId>
@@ -13,10 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TaxNow24 Backend</name>
 	<description>Backend for the TaxNow24 b2b platform</description>
-	<properties>
-		<java.version>11</java.version>
-		<kotlin.version>1.6.20</kotlin.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

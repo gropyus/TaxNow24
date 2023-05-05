@@ -4,7 +4,7 @@ A kotlin spring boot service that can perform various tax calculations for the [
 It uses maven as a build tool.
 
 ## Prerequisites
-* [java](https://yarnpkg.com/getting-started/install) (at least jdk version 11)
+* [java](https://yarnpkg.com/getting-started/install) (at least jdk version 17)
 
 ## Installing dependencies
 ```bash
