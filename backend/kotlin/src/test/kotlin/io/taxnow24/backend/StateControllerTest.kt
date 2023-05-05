@@ -11,22 +11,22 @@ import org.springframework.http.HttpStatus
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 internal class StateControllerTest {
     @Autowired
-    var restTemplateBuilder: RestTemplateBuilder? = null
+    private lateinit var restTemplateBuilder: RestTemplateBuilder
 
     @LocalServerPort
     var port = 0
 
     @Test
     fun `should return supported states`() {
-        val response = restTemplateBuilder!!.build()
-            .getForEntity("http://localhost:$port/states", List::class.java)
+        val response = restTemplateBuilder.build()
+            .getForEntity("http://localhost:$port/states", StatesResponse::class.java)
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
-        Assertions.assertThat(response.body).contains("TX")
+        Assertions.assertThat(response.body!!.states).contains("TX")
     }
 
     @Test
     fun `should accept tax rate per state`() {
-        val response = restTemplateBuilder!!.build()
+        val response = restTemplateBuilder.build()
             .postForEntity("http://localhost:$port/states/UT/tax", 0.0685, String::class.java)
 
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)

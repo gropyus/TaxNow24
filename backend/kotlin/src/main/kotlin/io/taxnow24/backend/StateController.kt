@@ -11,8 +11,8 @@ class StateController {
     private val taxRates: MutableMap<String, Double> = mutableMapOf()
 
     @GetMapping
-    fun listStates(): List<String> {
-        return states
+    fun listStates(): StatesResponse {
+        return StatesResponse(states)
     }
 
     @PostMapping(path = ["/{state}/tax"], consumes = [MediaType.APPLICATION_JSON_VALUE])
@@ -20,3 +20,7 @@ class StateController {
         taxRates[state] = taxValue
     }
 }
+
+data class StatesResponse(
+    val states: List<String>
+)
